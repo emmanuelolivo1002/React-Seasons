@@ -38,7 +38,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <Spinner />
+          <Spinner message="Please accept location request" />
         </div>
       );
     }
