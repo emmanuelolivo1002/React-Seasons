@@ -2,6 +2,7 @@
   "name": "react-seasons",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://emmanuelolivo1002.github.io/React-Seasons/",
   "dependencies": {
     "node-sass": "^4.11.0",
     "react": "^16.8.5",
