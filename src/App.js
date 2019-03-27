@@ -21,27 +21,19 @@ class App extends Component {
     );
   };
 
-  render() {
+  renderContent() {
     const { lat, errorMessage } = this.state;
+
     if (errorMessage && !lat) {
-      return (
-        <div className="App">
-          <h1>Error: {errorMessage}</h1>
-        </div>
-      );
+      return <h1>Error: {errorMessage}</h1>;
     } else if (!errorMessage && lat) {
-      return (
-        <div className="App">
-          <SeasonDisplay lat={lat} />
-        </div>
-      );
+      return <SeasonDisplay lat={lat} />;
     } else {
-      return (
-        <div className="App">
-          <Spinner message="Please accept location request" />
-        </div>
-      );
+      return <Spinner message="Please accept location request" />;
     }
+  }
+  render() {
+    return <div className="App">{this.renderContent()}</div>;
   }
 }
 
