@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
 
 class App extends Component {
   state = {
@@ -37,7 +38,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <h1>Loading...</h1>
+          <Spinner />
         </div>
       );
     }
