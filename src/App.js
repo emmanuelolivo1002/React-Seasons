@@ -1,24 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+// Hook Logic
+import useLocation from "./useLocation";
+
+// Components
 import SeasonDisplay from "./SeasonDisplay";
 import Spinner from "./Spinner";
 
 const App = () => {
-  // Initialize the state
-  const [lat, setLat] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
-
-  useEffect(() => {
-    // Get User Position and update state
-    window.navigator.geolocation.getCurrentPosition(
-      position => {
-        const { latitude } = position.coords;
-        setLat(latitude);
-      },
-      err => {
-        setErrorMessage(err.message);
-      }
-    );
-  }, []);
+  const [lat, errorMessage] = useLocation();
 
   let content;
   if (errorMessage) {
